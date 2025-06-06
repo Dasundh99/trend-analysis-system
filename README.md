@@ -34,9 +34,6 @@ This project analyzes trends of Amazon product reviews over time using Hadoop Ma
   - Aggregates sentiment score and count per `ProductID_Year`
   - Outputs average sentiment per year for each product
 
-### Example Output:
-
-
 ## Result Interpretation
 This system differs from traditional aggregation in that it incorporates **time-based trends**. Instead of one average score per product, it reveals **yearly sentiment fluctuations**, helping identify:
 - Customer satisfaction over time
@@ -58,15 +55,19 @@ Screenshots of:
 
 ### Commands:
 
-```bash
+#### Start hadoop
+start-dfs.sh
+#### run this command to verify
+jps
+#### Create Input and Output Directories in HDFS
 hdfs dfs -mkdir /input
 hdfs dfs -put Reviews.csv /input
-
+#### Run Job
 hadoop jar /usr/lib/hadoop/hadoop-streaming.jar \
   -input /input/Reviews.csv \
   -output /output/review_trends \
   -mapper mapper.sh \
   -reducer reducer.sh
-
+#### View Output
 hdfs dfs -cat /output/review_trends/part-00000
 
