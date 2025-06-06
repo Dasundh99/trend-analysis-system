@@ -10,7 +10,7 @@
 This project analyzes trends of Amazon product reviews over time using Hadoop MapReduce. It extracts yearly average sentiment scores to visualize changes in customer opinion for each product category.
 
 ## Dataset
-- Source: https://www.kaggle.com/datasets/arhamrumi/amazon-product-reviews
+- Source: https://www.kaggle.com/datasets/saurav9786/amazon-product-reviews
 - Columns Used: `ProductId`, `Time`, `Score`
 - Preprocessing: UNIX `cut`, `awk`, `grep` used to clean and extract relevant columns.
 
